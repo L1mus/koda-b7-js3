@@ -1,36 +1,35 @@
 function paymentSystem(money){
+  const currency = {
+    }
   let totalPayment = 50000
   if(money < totalPayment){
     return console.log("uang anda Kurang bro!")
   }
   let charge = money - totalPayment
   let calculateMoney = 0
-  let text = "";
-  
-  while(calculateMoney <= charge){
+  while(charge !== 0){
     if(charge>=100000){
-      calculateMoney =+ 100000
-      text =+ "100000 + "
-      console.log("kondisi1")
+      charge -= 100000
     }else if(charge>=50000){
-      canlculateMoney =+ 50000
-      text =+ "50000 + "
-      console.log("kondisi2")
+      charge -= 50000
     }else if(charge>=10000){
-      canlculateMoney =+ 10000
-      text =+ "10000 + "
-      console.log("kondisi3")
+      charge-= 10000
     }else if(charge>2000){
-      canlculateMoney =+2000
-      text =+ "2000 + "
-      console.log("kondisi4")
+       charge-= 2000
     }else{
-      canlculateMoney =+1000
-      text =+ "1000 + "
-      console.log("kondisi5")
+       charge-=1000
       }
   }
-  return console.log(text)
+  
+  return console.log(`Kembalian sebesar ${charge}
+  berapa lembar 
+  Rp.100.000 :
+  Rp.50.000  :
+  Rp.20.000  :
+  Rp.10.000  :
+  Rp.5.000   :
+  Rp.1.000   :
+  `)
 }
 
 paymentSystem(160000)
